@@ -1,0 +1,127 @@
+Set Data Structure in Apex
+-------------------------------
+
+Def: A set is an unordered collection of elements that do not contain any duplicates.
+
+1. Creating a set of Integers
+
+  Set<Integer> numbers = new Set<Integer>();
+  System.debug(numbers);
+  
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10};
+  System.debug(numbers);
+
+2. Creating a set of Strings
+
+  Set<String> employees = new Set<String>{'Richard', 'Monica', 'Dinesh', 'Richard'};
+  System.debug(employees);
+
+3. Adding elements to the set
+
+  Set<Integer> numbers = new Set<Integer>();
+  numbers.add(30);
+  numbers.add(30);
+  numbers.add(30);
+  numbers.add(20);
+  numbers.add(20);
+  numbers.add(10);
+  numbers.add(10);
+  System.debug(numbers);
+
+
+4. Accessing elements from the set
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10};
+  System.debug(numbers);
+  
+  for(Integer num : numbers) {
+      System.debug(num);
+  }
+
+5. Removing element from the set
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10};
+  System.debug(numbers);
+  System.debug('Removing 20....');
+  numbers.remove(20);
+  System.debug(numbers);
+
+
+6. Checking if the element is present in the set or not
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug(numbers);
+  System.debug('Is 20 present inside the set? -> ' + numbers.contains(20));
+  System.debug('Is 100 present inside the set? -> ' + numbers.contains(100));
+
+#. clear():
+----------
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug(numbers);
+  numbers.clear();
+  System.debug(numbers);
+
+#. isEmpty():
+-----------
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug('Is my set empty? -> ' + numbers.isEmpty());
+  numbers.clear();
+  System.debug('Is my set empty? -> ' + numbers.isEmpty());
+
+#. size():
+----------
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug(numbers);
+  System.debug('Size of the set -> ' + numbers.size());
+  numbers.clear();
+  System.debug('Size of the set -> ' + numbers.size());
+
+#. containsAll():
+----------
+
+  -> Check the whole list or set as a part of another set
+  
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug('Set -> ' + numbers);
+  
+  List<Integer> numbersList = new List<Integer>{10,20, 100};
+  System.debug('List -> ' + numbersList);
+  
+  System.debug('List is present inside the set -> ' + numbers.containsAll(numbersList));
+
+#. retainAll():
+--------------
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug('Initial Set -> ' + numbers);
+  
+  List<Integer> numbersToRetain = new List<Integer>{20,30,100};
+  System.debug('Numbers to retain set -> ' + numbersToRetain);
+  
+  numbers.retainAll(numbersToRetain);
+  System.debug('Final Set -> ' + numbers);
+
+
+
+
+#. Convert Set to List
+---------------------
+
+  Set<Integer> numbers = new Set<Integer>{30,30,30,20,20,10,40,40};
+  System.debug('Initial Set -> ' + numbers);
+  
+  List<Integer> numbersList = new List<Integer>(numbers);
+  System.debug('List from Set -> ' + numbersList);
+  
+  System.debug('Number at index 2 = ' + numbersList[2]);
+
+#. Convert List to Set
+---------------------
+
+  List<Integer> numbersList = new List<Integer>{30,30,30,20,20,10,40,40};
+  System.debug('Initial List -> ' + numbersList);
+  
+  Set<Integer> numbers = new Set<Integer>(numbersList);
+  System.debug('Set from List -> ' + numbers);
