@@ -1,0 +1,165 @@
+Map Data Structure in Apex
+-------------------------------
+
+Def: A map is a collection of key-value pairs where each unique key maps to a single value.
+
+1. Creating a Map of Employees
+-------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>();
+System.debug(employeesMap);
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh'
+};
+System.debug(employeesMap);
+
+
+2. Adding elements to the map
+------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>();
+System.debug(employeesMap);
+
+employeesMap.put(1, 'Richard');
+employeesMap.put(2, 'Monica');
+employeesMap.put(3, 'Erlich');
+employeesMap.put(4, 'Dinesh');
+System.debug(employeesMap);
+
+
+3. Accessing elements from the map
+-----------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh'
+};
+System.debug(employeesMap);
+
+// System.debug('Employee with id 3 = ' + employeesMap.get(3));
+System.debug('Employee with id 10 = ' + employeesMap.get(10));
+
+
+4. Removing element from the map
+-----------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh'
+};
+System.debug('Initial Map = ' + employeesMap);
+
+System.debug('Removing Employee with Id 4...');
+employeesMap.remove(4);
+
+System.debug('Final Map = ' + employeesMap);
+
+
+5. Checking if the element is present in the map or not
+---------------------------------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh'
+};
+System.debug('Initial Map = ' + employeesMap);
+
+System.debug('Is Employee with id 3 present? => ' + employeesMap.containsKey(3));
+System.debug('Is Employee with id 100 present? => ' + employeesMap.containsKey(100));
+
+Map advanced methods:
+----------------------
+
+keySet(): Get all keys from a map
+-------------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh'
+};
+System.debug('Initial Map = ' + employeesMap);
+
+Set<Integer> employeeIds = employeesMap.keySet();
+System.debug(employeeIds);
+
+values(): Get all values from a map
+--------------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh',
+    5 => 'Richard'
+};
+System.debug('Initial Map = ' + employeesMap);
+
+List<String> employeeNames = employeesMap.values();
+System.debug(employeeNames);
+
+clear(): Remove all key-value pairs from a map
+------------------------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh',
+    5 => 'Richard'
+};
+System.debug('Initial Map = ' + employeesMap);
+
+System.debug('Clearing all pairs.....');
+employeesMap.clear();
+
+System.debug('Final Map = ' + employeesMap);
+
+isEmpty(): Check if a map is empty
+------------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh',
+    5 => 'Richard'
+};
+System.debug('Initial Map = ' + employeesMap);
+System.debug('Is my map empty? => ' + employeesMap.isEmpty());
+
+System.debug('Clearing all pairs.....');
+employeesMap.clear();
+
+System.debug('Final Map = ' + employeesMap);
+System.debug('Is my map empty? => ' + employeesMap.isEmpty());
+
+size(): Get total number of key value pairs from a map
+-------------------------------------------------------
+
+Map<Integer, String> employeesMap = new Map<Integer, String>{
+    1 => 'Richard',
+    2 => 'Monica',
+    3 => 'Erlich',
+    4 => 'Dinesh',
+    5 => 'Richard'
+};
+System.debug('Initial Map = ' + employeesMap);
+System.debug('Size of the map = ' + employeesMap.size());
+
+System.debug('Clearing all pairs.....');
+employeesMap.clear();
+
+System.debug('Final Map = ' + employeesMap);
+System.debug('Size of the map = ' + employeesMap.size());
